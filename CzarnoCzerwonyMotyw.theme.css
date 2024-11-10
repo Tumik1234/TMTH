@@ -1,0 +1,70 @@
+/**
+ * @name CzarnoCzerwonyMotyw
+ * @version 1.0
+ * @description Motyw czarno-czerwony z tłem
+ * @author TwojeImię
+ * @source https://github.com/TwójGitHubUsername/repo-name
+ * @website https://github.com/TwójGitHubUsername/repo-name
+ */
+
+/* Załaduj z GitHub */
+@import url('https://raw.githubusercontent.com/tumik1234/CzarnoCzerwonyMotyw.theme.css');
+
+/* Zmienne motywu */
+:root {
+    --primary-color: #ff0000; /* Czerwony */
+    --background-color: #1a1a1a; /* Ciemny czarny */
+    --text-color: #ffffff; /* Biały dla lepszej widoczności */
+    --hover-color: #b30000; /* Ciemny czerwony dla efektów hover */
+    --image-background: url('https://raw.githubusercontent.com/tumik1234/TMTH/tlo.png'); /* Link do obrazu tła */
+}
+
+/* Tło i ogólne ustawienia */
+body {
+    background: var(--background-color) var(--image-background) no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+}
+
+/* Tło listy kanałów */
+.container-3baos1,
+.container-1NXEtd {
+    background-color: rgba(26, 26, 26, 0.8);
+}
+
+/* Kolor tekstu dla nagłówków i nazw */
+.title-29uC1r,
+.name-1jkAdW,
+.header-3sFAeJ {
+    color: var(--text-color) !important;
+}
+
+/* Styl wiadomości */
+.message-2qnXI6 {
+    background: rgba(255, 0, 0, 0.1); /* Przezroczysty czerwony */
+    color: var(--text-color) !important;
+}
+
+/* Efekt najechania na przyciski */
+.button-1ZiXG9:hover {
+    background-color: var(--hover-color) !important;
+}
+
+/* Pasek boczny */
+.sidebar-2K8pFh {
+    background-color: rgba(26, 26, 26, 0.9);
+    border-right: 1px solid var(--primary-color);
+}
+
+/* Styl nagłówków */
+.header-1R_AjF, 
+.title-31MJll {
+    color: var(--primary-color) !important;
+    text-transform: uppercase;
+}
+
+/* Ikony statusu (online/offline) */
+.status-3kkvTa {
+    background-color: var(--primary-color) !important;
+}
