@@ -8,7 +8,7 @@
  */
 
 /* Załaduj z GitHub */
-@import url('https://raw.githubusercontent.com/tumik1234/CzarnoCzerwonyMotyw.theme.css');
+@import url('https://github.com/Tumik1234/TMTH/blob/main/CzarnoCzerwonyMotyw.theme.css');
 
 /* Zmienne motywu */
 :root {
@@ -16,7 +16,7 @@
     --background-color: #1a1a1a; /* Ciemny czarny */
     --text-color: #ffffff; /* Biały dla lepszej widoczności */
     --hover-color: #b30000; /* Ciemny czerwony dla efektów hover */
-    --image-background: url('https://raw.githubusercontent.com/tumik1234/TMTH/tlo.png'); /* Link do obrazu tła */
+    --image-background: url('https://github.com/Tumik1234/TMTH/blob/main/tlo.png'); /* Link do obrazu tła */
 }
 
 /* Tło i ogólne ustawienia */
