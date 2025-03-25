@@ -1,70 +1,138 @@
 /**
  * @name CzarnoCzerwonyMotyw
- * @version 1.0
- * @description Motyw czarno-czerwony z tłem
+ * @version 1.2
+ * @description Motyw czarno-czerwony z efektami hover i animacjami
  * @author TwojeImię
  * @source https://github.com/TwójGitHubUsername/repo-name
  * @website https://github.com/TwójGitHubUsername/repo-name
  */
 
 /* Załaduj z GitHub */
-@import url('https://github.com/Tumik1234/TMTH/blob/main/CzarnoCzerwonyMotyw.theme.css');
+/* @import url('https://github.com/Tumik1234/TMTH/blob/main/CzarnoCzerwonyMotyw.theme.css'); */
+@import url(https://tumik1234.github.io/TMTH/base.css);
 
 /* Zmienne motywu */
 :root {
     --primary-color: #ff0000; /* Czerwony */
+    --secondary-color: #8b0000; /* Ciemniejszy czerwony */
     --background-color: #1a1a1a; /* Ciemny czarny */
-    --text-color: #ffffff; /* Biały dla lepszej widoczności */
+    --background-secondary: #2a2a2a; /* Trochę jaśniejszy czarny */
+    --background-tertiary: #333333; /* Jeszcze jaśniejszy szary */
+    
+    --text-color: #ffffff; /* Biały */
+    --text-muted: #aaaaaa; /* Przygaszony tekst */
+    --text-highlight: #ff6666; /* Jaśniejszy czerwony dla wyróżnienia */
+    
     --hover-color: #b30000; /* Ciemny czerwony dla efektów hover */
-    --image-background: url('https://github.com/Tumik1234/TMTH/blob/main/tlo.png'); /* Link do obrazu tła */
+    --hover-text-color: #ffcccc; /* Jaśniejszy czerwony tekst przy hover */
+    
+    --border-color: #ff4444; /* Kolor obramowań */
+    --button-color: #ff2222; /* Kolor przycisków */
+    --button-hover: #cc0000; /* Kolor przycisków po najechaniu */
+    
+    --message-hover: rgba(255, 0, 0, 0.2); /* Kolor wiadomości po najechaniu */
+    --member-hover: rgba(255, 0, 0, 0.3); /* Kolor podświetlenia użytkowników */
+    
+    --background-image: url("https://tumik1234.github.io/TMTH/tlo.png");
+    --user-modal-image: var(--background-image);
+    --user-popout-image: var(--background-image);
+    --background-attachment: fixed;
+    --user-modal-attachment: var(--background-attachment);
+    --user-popout-attachment: var(--background-attachment);
+    --background-filter: none;
+    --user-modal-filter: none;
+    --user-popout-filter: none;
 }
 
-/* Tło i ogólne ustawienia */
-body {
-    background: var(--background-color) var(--image-background) no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Roboto', sans-serif;
-    color: var(--text-color);
-}
-
-/* Tło listy kanałów */
+/* Tło i interfejs */
 .container-3baos1,
-.container-1NXEtd {
-    background-color: rgba(26, 26, 26, 0.8);
+.container-1NXEtd,
+.sidebar-2K8pFh {
+    background-color: var(--background-secondary);
 }
 
-/* Kolor tekstu dla nagłówków i nazw */
+.sidebar-2K8pFh {
+    border-right: 2px solid var(--border-color);
+}
+
+/* Tekst nagłówków i nazw */
 .title-29uC1r,
 .name-1jkAdW,
-.header-3sFAeJ {
-    color: var(--text-color) !important;
-}
-
-/* Styl wiadomości */
-.message-2qnXI6 {
-    background: rgba(255, 0, 0, 0.1); /* Przezroczysty czerwony */
-    color: var(--text-color) !important;
-}
-
-/* Efekt najechania na przyciski */
-.button-1ZiXG9:hover {
-    background-color: var(--hover-color) !important;
-}
-
-/* Pasek boczny */
-.sidebar-2K8pFh {
-    background-color: rgba(26, 26, 26, 0.9);
-    border-right: 1px solid var(--primary-color);
-}
-
-/* Styl nagłówków */
-.header-1R_AjF, 
+.header-3sFAeJ,
+.header-1R_AjF,
 .title-31MJll {
-    color: var(--primary-color) !important;
+    color: var(--text-color) !important;
     text-transform: uppercase;
 }
 
-/* Ikony statusu (online/offline) */
+/* Wiadomości */
+.message-2qnXI6 {
+    background: rgba(255, 0, 0, 0.1);
+    color: var(--text-color) !important;
+    border-left: 2px solid var(--primary-color);
+    padding: 5px;
+}
+
+/* Efekt hover na wiadomości */
+.message-2qnXI6:hover {
+    background: var(--message-hover);
+}
+
+/* Przycisk */
+.button-1ZiXG9 {
+    background-color: var(--button-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-1ZiXG9:hover {
+    background-color: var(--button-hover) !important;
+    color: var(--hover-text-color) !important;
+}
+
+/* Efekt hover na użytkownikach */
+.member-3W1lQa:hover {
+    background: var(--member-hover);
+}
+
+/* Ikony statusu */
 .status-3kkvTa {
     background-color: var(--primary-color) !important;
+}
+
+/* Obrazy jako okrągłe */
+img,
+.avatar-3QF_VA,
+.avatar-1BDn8e,
+.avatarWrapper-1B9FTW,
+.avatar-2e8lTP {
+    border-radius: 50% !important;
+    object-fit: cover;
+}
+
+/* Animacja paska użytkowników */
+.membersWrap-3NUR2t {
+    animation: fadeIn 1s ease-in-out, slideIn 1s ease-in-out;
+}
+
+/* Animacje */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(20px); }
+    to { transform: translateX(0); }
+}
+
+/* Efekt pulsowania listy użytkowników */
+.member-3W1lQa {
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    from { background-color: rgba(255, 0, 0, 0.1); }
+    to { background-color: rgba(255, 0, 0, 0.3); }
 }
