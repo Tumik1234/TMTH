@@ -1,1 +1,82 @@
+:root {
+    --main-color: #ff0000; /* Jasnoczerwony */
+    --dark-red: #8b0000; /* Ciemnoczerwony */
+    --background-url: url("https://your-image-link.com/image.jpg"); /* Zmień na własny link */
+}
 
+/* ====== Tło aplikacji ====== */
+.appMount-3lHmkl {
+    background: var(--background-url) no-repeat center center fixed !important;
+    background-size: cover !important;
+}
+
+/* ====== Panele boczne ====== */
+.sidebar-1tnWFu {
+    background-color: var(--dark-red) !important;
+}
+
+/* ====== Główne okno czatu ====== */
+.chatContent-3KubbW {
+    background-color: rgba(255, 0, 0, 0.2) !important;
+}
+
+/* ====== Pasek górny ====== */
+.titleBar-AC4pGV {
+    background-color: var(--main-color) !important;
+}
+
+/* ====== Wiadomości ====== */
+.message-2qnXI6 {
+    background-color: rgba(255, 0, 0, 0.1) !important;
+    border-left: 3px solid var(--main-color);
+    border-radius: 5px;
+}
+
+/* ====== Przycisk wysyłania wiadomości ====== */
+.button-38aScr {
+    background-color: var(--dark-red) !important;
+    color: white;
+    border-radius: 5px;
+}
+
+/* ====== Pasek przewijania ====== */
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--dark-red) !important;
+}
+
+/* ===== WYSUWANY PANEL BOCZNY (LISTA CZŁONKÓW SERWERA) ===== */
+
+.membersWrap-3NUR2t {
+    position: fixed !important;
+    right: -260px; /* Domyślnie ukryty */
+    width: 260px;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.95) !important;
+    transition: right 0.4s ease-in-out;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Panel wysuwa się po najechaniu myszką na prawą stronę ekranu */
+.guilds-2JjMmN:hover + .membersWrap-3NUR2t,
+.membersWrap-3NUR2t:hover {
+    right: 0 !important;
+}
+
+/* Pasek oddzielający listę członków od czatu */
+.membersWrap-3NUR2t::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    width: 4px;
+    height: 100%;
+    background-color: var(--main-color) !important;
+}
+
+/* Ukrycie domyślnej listy członków */
+.container-2o3qEW {
+    display: none !important;
+}
